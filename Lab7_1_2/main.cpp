@@ -87,10 +87,15 @@ DWORD AverageWithNine(LPVOID lpParameter)
         }
     });
 
-    output_msg << std::endl
-        << "Average with nine: "
-        << (static_cast<double>(sum) / count)
-        << std::endl << std::endl;
+    if (count != 0)
+    {
+        output_msg << std::endl
+            << "Average with nine: "
+            << (static_cast<double>(sum) / count)
+            << std::endl << std::endl;
+    }
+    else
+    { std::cout << "Average with nine: no numbers divided by 9\n\n"; }
 
     std::cout << output_msg.rdbuf();
 
